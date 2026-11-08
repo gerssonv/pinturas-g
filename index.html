@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pinturas G – Cotiza tu trabajo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Inicio -->
+    <header>
+      <svg viewBox="0 0 340 200" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e9c978"/>
+            <stop offset="1" stop-color="#9a7424"/>
+          </linearGradient>
+        </defs>
+        <path d="M340 10C260 30 220 70 240 110s60 60 30 100" stroke="url(#g)" stroke-width="2"/>
+        <path d="M340 30C270 50 240 80 260 115s50 55 25 95" stroke="url(#g)" stroke-width="1.2" opacity=".7"/>
+        <path d="M340 55C285 70 265 95 280 120s35 45 20 80" stroke="url(#g)" stroke-width=".8" opacity=".5"/>
+      </svg>
+      <div class="brand">PINTURAS G</div>
+      <h1>Cotiza tu trabajo</h1>
+      <p class="lead">Unos pasos rápidos y recibes tu precio. Lo confirmamos por WhatsApp.</p>
+    </header>
+
+    <!-- Paso 1: tipo de vehículo -->
+    <section id="s-vehicle">
+      <h2>Selecciona el tipo de vehículo</h2>
+      <p class="hint">Define el tamaño del trabajo.</p>
+      <div class="opts" id="vehicle"></div>
+    </section>
+
+    <!-- Paso 2: servicio -->
+    <section id="s-service" hidden>
+      <h2>Selecciona el servicio</h2>
+      <p class="hint">Elige qué necesita tu vehículo.</p>
+      <div class="opts" id="service"></div>
+    </section>
+
+    <!-- Paso 3: tipo de detallado o de pintura (el título cambia según el servicio) -->
+    <section id="s-sub" hidden>
+      <h2 id="subTitle">Tipo de trabajo</h2>
+      <p class="hint" id="subHint"></p>
+      <div class="opts" id="sub"></div>
+    </section>
+
+    <!-- Paso 4 (solo pintura): cantidad de piezas -->
+    <section id="s-pieces" hidden>
+      <h2>¿Cuántas piezas vas a pintar?</h2>
+      <p class="hint">Puerta, capó, guardabarros, parachoques... cada una cuenta como una pieza.</p>
+      <div class="opts" id="pieces"></div>
+    </section>
+
+    <!-- Paso 5 (solo pintura): tipo de color -->
+    <section id="s-finish" hidden>
+      <h2>Tipo de color</h2>
+      <p class="hint">El precio publicado es para color liso.</p>
+      <div class="opts" id="finish"></div>
+    </section>
+
+    <!-- Resumen, datos del cliente y envío -->
+    <section id="s-sum" hidden>
+      <div class="field">
+        <label for="name">Tu nombre</label>
+        <input id="name" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="model">Modelo de tu vehículo</label>
+        <select id="model"></select>
+      </div>
+      <div class="field" id="otherWrap" hidden>
+        <label for="other">Escribe marca, modelo y año</label>
+        <input id="other" placeholder="Ej. Toyota Yaris 2015">
+      </div>
+
+      <div class="summary" aria-live="polite">
+        <h2>Tu cotización</h2>
+        <ul class="rows" id="rows"></ul>
+        <div class="price" id="price"></div>
+        <p class="note" id="note"></p>
+        <a class="cta" id="send" href="#" target="_blank" rel="noopener" aria-disabled="true">Enviar por WhatsApp</a>
+        <p class="warn" id="warn">Escribe tu nombre para poder enviar.</p>
+      </div>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
